@@ -1,0 +1,305 @@
+fileFormatVersion: 2
+guid: 70ce972ce8bd1b445b1c366ca211e2cf
+ModelImporter:
+  serializedVersion: 21202
+  internalIDToNameTable: []
+  externalObjects:
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: 02a
+    second: {fileID: 2800000, guid: 7029542af3bf6d24981bd5be4f08b5dc, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: 03
+    second: {fileID: 2800000, guid: a95eb82c80cb1624587d4b452af09e89, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: EMBLEM01
+    second: {fileID: 2800000, guid: c2dcae318bd62064a9e0d8df35417f64, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: HA3_CHASSIS
+    second: {fileID: 2800000, guid: a8a2cb0b8dc966a4b80895f97ccfe28c, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: HA3_CHASSIS_nm
+    second: {fileID: 2800000, guid: adf18d595269697438187fedb704c664, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: HA3_INT1
+    second: {fileID: 2800000, guid: 516a49454321d6b4dbc4e2f1f67c434f, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: HA3_INT1_nm
+    second: {fileID: 2800000, guid: ff52984b8f069d545a4ff9ccca25d77e, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: HA3_INT2
+    second: {fileID: 2800000, guid: cdf4c55685b98dc4a96043ac537be916, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: HA3_INT3
+    second: {fileID: 2800000, guid: 0c34aefa7658e874fb3500e3f403a84a, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: HA3_MAINBODY
+    second: {fileID: 2800000, guid: 64a6969a0abf1c34686b6dcac0839bd1, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: HA3_MUD
+    second: {fileID: 2800000, guid: 68a1f1aab44f3fd4285fa912f2567f92, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: HA3_MUD_nm
+    second: {fileID: 2800000, guid: 38798e053caacdd4686d955e70dd3913, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: LIGHT_ON2
+    second: {fileID: 2800000, guid: 0373f76a0586c9344bfacc953e4f153f, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: LIGHT_ON_HEAD
+    second: {fileID: 2800000, guid: 31bbdfd5d8ebe6f4e89c798d4e455e95, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NULL
+    second: {fileID: 2800000, guid: 82c175e1680a76a4ba54b16ed821aa8e, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: PLATE
+    second: {fileID: 2800000, guid: 3be7c11b07849cc418aeff0ddd472e81, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: PLATE-BM
+    second: {fileID: 2800000, guid: 3c8bab8fafbbabf4a947c671bfd44012, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: RIM_Base_Color
+    second: {fileID: 2800000, guid: 88b01b0ad1e544b4793ac3fd048855d2, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: RIM_nm
+    second: {fileID: 2800000, guid: 02d84d5d64a8745458b35169b5f57867, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: bolt-comn01
+    second: {fileID: 2800000, guid: c854d6b189073854cb0495739082e1fb, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: bolt-comn01-nm
+    second: {fileID: 2800000, guid: 4be53710119780f4786a474c78f07a85, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: bolt-comn02_a
+    second: {fileID: 2800000, guid: 8d6035ff1aba40e45a48799b549196a3, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: bolt-comn02_a_nm
+    second: {fileID: 2800000, guid: a73b3c90e35615d4686e8638d2b5208b, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: br
+    second: {fileID: 2800000, guid: 4528bcf14bd991a4291f0c880dbbdf30, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: coms_brake
+    second: {fileID: 2800000, guid: 289b6537f91a6314bb6bf7135f609475, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: flat_nm
+    second: {fileID: 2800000, guid: 4759e2ec76cfb6440baca26f67824508, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: gradation-tex-001
+    second: {fileID: 2800000, guid: e3ee183d8ad91f24cb7115734ceddc6a, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: ha23v-int-belt01
+    second: {fileID: 2800000, guid: d90ce69a31f77604dad9b8aeaf3d8bba, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: ha23v-int-belt01-nm
+    second: {fileID: 2800000, guid: 0566f7664ee04b74e8a3fa99bd78b7b8, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: ha3_body
+    second: {fileID: 2800000, guid: 074486f944d07ef4b936a90b114f934d, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: ha3_detail01
+    second: {fileID: 2800000, guid: 6746313019399b4469a6e7a191a5e59f, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: ha3_detail02
+    second: {fileID: 2800000, guid: 32c02a5d1d91d254db828cbe0c0f8274, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: ha3_logo
+    second: {fileID: 2800000, guid: dd13c9c267b929e4dab6489c80f6480f, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: ha3icons01
+    second: {fileID: 2800000, guid: a456984ed2966ed4baabda80657e386d, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: ha3light
+    second: {fileID: 2800000, guid: 44b024a0a849181429fb8f6d13db2083, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: shiftpattern
+    second: {fileID: 2800000, guid: 39efc0fb8fad97546af045b6598a4442, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: shiftpattern_nm
+    second: {fileID: 2800000, guid: dbcce812474f85546b816f877b498b3b, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: speeker
+    second: {fileID: 2800000, guid: 501b9e4707d39844685674def29a524c, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: tire145r12
+    second: {fileID: 2800000, guid: 1238c6d3ba408104fb497736a173074e, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: tire145r12_nm
+    second: {fileID: 2800000, guid: fc51281e23c67e24bb5a312d22e72c15, type: 3}
+  materials:
+    materialImportMode: 2
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    removeConstantScaleCurves: 1
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 1
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 1
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    nodeNameCollisionStrategy: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    optimizeBones: 1
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 0
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
