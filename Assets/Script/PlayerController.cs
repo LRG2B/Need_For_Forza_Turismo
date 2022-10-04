@@ -40,7 +40,7 @@ public class PlayerController : MonoBehaviour //Script de contrôle du véhicule
         transform.Translate(Vector3.forward * Time.deltaTime * speed ); //Déplacement du véhicule en fonction du temps. Note: le véhicule avance tout le temps, il ne peut pas reculer
 
         //Si le véhicule route, il peut tourné, sinon, il ne peut pas
-        Debug.Log(speed);
+        //Debug.Log(speed);
         if(speed > 0)
             transform.Rotate(Vector3.up, turnSpeed * horizontalInput * Time.deltaTime); //on fait tourné le véhicule quand on donne un input horizontal
 
@@ -79,14 +79,14 @@ public class PlayerController : MonoBehaviour //Script de contrôle du véhicule
     private void LateUpdate()
     {
         //Si le joueur tombe de la route, il perd
-        if (transform.position.y < -10)
+        /*if (transform.position.y < -10)
             SceneManager.LoadScene("Loose"); //Chargement de la scène Loose
 
         //Si le véhicule est en l'air, il ne peut plus avancé
-        //if (transform.position.y > 2 || transform.position.y < -1)
-        //    speed = 0;
-        //else
-        //    speed = SaveSpeed;
+        /*if (transform.position.y > 2 || transform.position.y < -1)
+            speed = 0;
+        else
+            speed = SaveSpeed;*/
 
     }
 }
