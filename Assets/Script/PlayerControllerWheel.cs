@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerControllerWheel : MonoBehaviour
 {
@@ -61,13 +62,13 @@ public class PlayerControllerWheel : MonoBehaviour
             transform.Rotate(Vector3.up, turnSpeed * horizontalInput * Time.deltaTime); //on fait tourné le véhicule quand on donne un input horizontal
         }
 
+
         if (forwardInput > 0)
         {
             if (speed < MaxSpeed)
             {
                 speed += acc * speedAcc.Evaluate(forwardInput);
             }
-
         }
         if (forwardInput < 0)
         {
