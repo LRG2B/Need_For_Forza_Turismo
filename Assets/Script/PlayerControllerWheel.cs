@@ -27,6 +27,7 @@ public class PlayerControllerWheel : MonoBehaviour
     GameObject RLwheel; //Passager arriere
     GameObject FRwheel; //Conducteur Avant
     GameObject RRwheel; //Conducteur arriere
+    GameObject SW; //Volant
 
     private void Start()
     {
@@ -35,12 +36,14 @@ public class PlayerControllerWheel : MonoBehaviour
         RLwheel = GameObject.Find("WHEEL_LR_1");
         FRwheel = GameObject.Find("WHEEL_RF_1");
         RRwheel = GameObject.Find("WHEEL_RR_1");
+        SW = GameObject.Find("STEER_HR");
     }
 
     void Update()
     {
         horizontalInput = Input.GetAxis("Horizontal"); //déclaration de l'input horizontal
         forwardInput = Input.GetAxis("Vertical"); // déclaration de l'input vertical
+        SW.transform.Rotate(new Vector3(0, 0, 1) * Time.deltaTime * turnSpeed * 10 * -horizontalInput);
     }
 
     private void FixedUpdate()
@@ -54,7 +57,9 @@ public class PlayerControllerWheel : MonoBehaviour
         //Si le véhicule route, il peut tourné, sinon, il ne peut pas
         //Debug.Log(speed);
         if (speed > 0)
+        {
             transform.Rotate(Vector3.up, turnSpeed * horizontalInput * Time.deltaTime); //on fait tourné le véhicule quand on donne un input horizontal
+        }
 
         if (forwardInput > 0)
         {
