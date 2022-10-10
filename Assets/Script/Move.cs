@@ -23,7 +23,8 @@ public class Move : MonoBehaviour //Script de déplacement des obstacles
     void Update()
     {
         
-         transform.Translate(Vector3.right * movingSpeed * Time.deltaTime); //Déplacement de l'obstacle
+        transform.Translate(Vector3.right * movingSpeed * Time.deltaTime); //Déplacement de l'obstacle
+        //transform.Rotate(Vector3.forward * movingSpeed * Time.deltaTime*10);
 
         //On vérifie la position de l'obstacle sur la route, il fait demi tour si il arrive au bout
         if (transform.position.x < pos.x + (largRoad.x / 2) - 2)

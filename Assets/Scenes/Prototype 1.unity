@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 170076734}
-  m_IndirectSpecularColor: {r: 0.48264432, g: 0.12772882, b: 0.25998178, a: 1}
+  m_IndirectSpecularColor: {r: 1.0179529, g: 0.2917174, b: 0.56067777, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -152,7 +152,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1538646911}
-  m_RootOrder: 44
+  m_RootOrder: 43
   m_LocalEulerAnglesHint: {x: 11, y: 0, z: 0}
 --- !u!1 &170076733
 GameObject:
@@ -393,7 +393,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 11, y: 0, z: 0}
 --- !u!114 &534669906
 MonoBehaviour:
@@ -441,7 +441,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1538646911}
-  m_RootOrder: 43
+  m_RootOrder: 45
   m_LocalEulerAnglesHint: {x: 2.193, y: 195.857, z: -0.942}
 --- !u!81 &1117260748
 AudioListener:
@@ -502,6 +502,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: -5448041955394784972, guid: fa8242a47df9c494194776efcc239363, type: 3}
+      propertyPath: m_Mass
+      value: 800
+      objectReference: {fileID: 0}
+    - target: {fileID: -5448041955394784972, guid: fa8242a47df9c494194776efcc239363, type: 3}
       propertyPath: m_IsKinematic
       value: 0
       objectReference: {fileID: 0}
@@ -533,10 +537,6 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: ed0f688fe99a0db4a977cc7b061e9d75, type: 2}
-    - target: {fileID: 2499510080890084362, guid: fa8242a47df9c494194776efcc239363, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 9839427fb82cccd4696e55e1811e74b7, type: 2}
     - target: {fileID: 7336511369684216098, guid: fa8242a47df9c494194776efcc239363, type: 3}
       propertyPath: m_Name
       value: Acty
@@ -675,50 +675,6 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!1 &1385500137
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1385500138}
-  - component: {fileID: 1385500139}
-  m_Layer: 9
-  m_Name: Environment
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1385500138
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1385500137}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.490141, y: 1.7612343, z: 16.302181}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1385500139
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1385500137}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ce5e1842a8e647b45909f7c5122c1b71, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &1538646911 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7970059163413001112, guid: fa8242a47df9c494194776efcc239363, type: 3}
@@ -817,7 +773,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1899792531}
-  - component: {fileID: 1899792532}
   m_Layer: 0
   m_Name: waypoint1
   m_TagString: Untagged
@@ -838,20 +793,8 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1538646911}
-  m_RootOrder: 45
+  m_RootOrder: 44
   m_LocalEulerAnglesHint: {x: 13.078, y: 0, z: 0}
---- !u!114 &1899792532
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1899792530}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ce5e1842a8e647b45909f7c5122c1b71, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1998004797
 GameObject:
   m_ObjectHideFlags: 0
@@ -863,6 +806,7 @@ GameObject:
   - component: {fileID: 1998004800}
   - component: {fileID: 1998004799}
   - component: {fileID: 1998004801}
+  - component: {fileID: 1998004802}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -909,7 +853,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1998004801
 MonoBehaviour:
@@ -918,9 +862,29 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1998004797}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: df6493e075a17984490037b53bd7db15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   normalRoad: {fileID: 9210386102836462465, guid: 4f7d3b79f38f94f4b949964c81d3e4e8, type: 3}
+--- !u!114 &1998004802
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1998004797}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6315e6d27f73a83409a85e31ecf019b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  obstacles:
+  - {fileID: 5952155779800997204, guid: 8a2997f1a1882ad48b9ae44cffc2bfb4, type: 3}
+  - {fileID: 1896234667864343593, guid: 93a4569df9fa3b3428631326c19f7222, type: 3}
+  - {fileID: 5716718659659665553, guid: 60b8c5aecf0709946b2c489be46110a9, type: 3}
+  - {fileID: 4833153335279564057, guid: adbec03d53447be439e8a24e9898bf6e, type: 3}
+  - {fileID: 880868583301624671, guid: 5670d44c7ad9fad42a4ba7a1f099d457, type: 3}
+  car: {fileID: 7336511369684216098, guid: fa8242a47df9c494194776efcc239363, type: 3}
+  road: {fileID: 9210386102836462465, guid: 4f7d3b79f38f94f4b949964c81d3e4e8, type: 3}

@@ -115,7 +115,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 2100000, guid: 9839427fb82cccd4696e55e1811e74b7, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -261,7 +261,3 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   turnSpeed: 40
-  FLwheel: {fileID: 0}
-  RLwheel: {fileID: 0}
-  FRwheel: {fileID: 0}
-  RRwheel: {fileID: 0}
