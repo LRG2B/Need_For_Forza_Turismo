@@ -3,9 +3,8 @@ using System.Collections.Generic;
 using System.Drawing;
 using UnityEngine;
 
-public class FollowPlayer : MonoBehaviour //Script de suivit du joueur
+public class Switch_cam : MonoBehaviour //Script de suivit du joueur
 {
-    private GameObject player; //Déclaration du player
     public GameObject[] tab_waypoint;//initialisation de la position de la caméra derrière le player
     Transform pos_cam;
     int target;
@@ -14,12 +13,11 @@ public class FollowPlayer : MonoBehaviour //Script de suivit du joueur
     private void Start()
     {
         pos_cam = tab_waypoint[0].transform;
+
     }
 
     void LateUpdate()
     {
-        player = GameObject.FindGameObjectWithTag("Player"); //On récupère position du player
-
         if (Input.GetKeyDown(KeyCode.C))
         {
             target = (target + 1) % tab_waypoint.Length;

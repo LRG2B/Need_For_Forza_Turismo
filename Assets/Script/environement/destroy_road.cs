@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Destroy : MonoBehaviour //Script de destruction de la route
+public class destroy_road : MonoBehaviour //Script de destruction de la route
 {
     private GameObject car; //On récupère la voiture du player
     

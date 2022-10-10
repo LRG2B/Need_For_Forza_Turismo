@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Move : MonoBehaviour //Script de déplacement des obstacles
+public class barrel_move : MonoBehaviour //Script de déplacement des obstacles
 {
     public GameObject road; //On récuère la route pour avoir ses dimensions
 
@@ -24,7 +24,7 @@ public class Move : MonoBehaviour //Script de déplacement des obstacles
     {
         
         transform.Translate(Vector3.right * movingSpeed * Time.deltaTime); //Déplacement de l'obstacle
-        //transform.Rotate(Vector3.forward * movingSpeed * Time.deltaTime*10);
+        transform.Rotate(Vector3.forward * movingSpeed * Time.deltaTime*10);
 
         //On vérifie la position de l'obstacle sur la route, il fait demi tour si il arrive au bout
         if (transform.position.x < pos.x + (largRoad.x / 2) - 2)

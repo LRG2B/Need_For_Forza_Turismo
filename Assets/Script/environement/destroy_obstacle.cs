@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 //Script pour détruire les obstacles.
-public class DestroyObstacle : MonoBehaviour
+public class destroy_obstacle : MonoBehaviour
 {
     void LateUpdate()
     {

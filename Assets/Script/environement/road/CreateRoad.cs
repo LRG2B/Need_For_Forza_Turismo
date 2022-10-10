@@ -54,7 +54,7 @@ public class CreateRoad : MonoBehaviour
         if (player.transform.position.z >= (zt - 25 * longu))
         {
 
-            Vector3 spawnPosition = transform.position + new Vector3(0, 1, zt + longu); //définition de la position de la route
+            Vector3 spawnPosition = transform.position + new Vector3(0, 2, zt + longu); //définition de la position de la route
             Vector3 roadPosition = transform.position + new Vector3(0, 0, zt + longu); //définition de la position de la route
             Instantiate(road, roadPosition, spawnRotation); //Génération de la route
 

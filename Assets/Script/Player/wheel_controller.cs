@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class PlayerControllerWheel : MonoBehaviour
+public class wheel_controller : MonoBehaviour
 {
     //Définition de la vitesse
 
@@ -92,13 +92,5 @@ public class PlayerControllerWheel : MonoBehaviour
                 speed = MinSpeed;
             }
         }
-    }
-
-    private void LateUpdate()
-    {
-        //Si le joueur tombe de la route, il perd
-        /*if (transform.position.y < -10)
-            SceneManager.LoadScene("Loose"); //Chargement de la scène Loose*/
-
     }
 }
