@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class wheel_controller : MonoBehaviour
 {
@@ -15,6 +16,9 @@ public class wheel_controller : MonoBehaviour
     public AnimationCurve speedAcc;
     private float frein = 0.4f;
     public AnimationCurve speedMin;
+
+    public Text Odo;
+    private float odometer = 0;
 
     [SerializeField]
     private float turnSpeed; //Vitesse de la voiture quand elle tourne
@@ -54,6 +58,8 @@ public class wheel_controller : MonoBehaviour
         RLwheel.transform.Rotate(new Vector3(1,0,0) * Time.fixedDeltaTime * speed*10);
         FRwheel.transform.Rotate(new Vector3(1,0,0) * Time.fixedDeltaTime * speed*10);
         RRwheel.transform.Rotate(new Vector3(1,0,0) * Time.fixedDeltaTime * speed*10);
+        odometer += transform.position.z/2 - odometer;
+        Odo.text = odometer.ToString();
 
         //Si le véhicule route, il peut tourné, sinon, il ne peut pas
         //Debug.Log(speed);
@@ -92,5 +98,19 @@ public class wheel_controller : MonoBehaviour
                 speed = MinSpeed;
             }
         }
+    }
+
+    private void LateUpdate()
+    {
+        //Si le joueur tombe de la route, il perd
+        if (transform.position.y < -10)
+            SceneManager.LoadScene("Loose"); //Chargement de la scène Loose
+
+        //Si le véhicule est en l'air, il ne peut plus avancé
+        /*if (transform.position.y > 2 || transform.position.y < -1)
+            speed = 0;
+        else
+            speed = SaveSpeed;*/
+
     }
 }

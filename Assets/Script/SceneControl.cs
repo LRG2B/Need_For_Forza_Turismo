@@ -5,9 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class SceneControl : MonoBehaviour //Script de management des Scène
 {
-    public static SceneControl instance;
+    //public static SceneControl instance;
 
-    private void Awake()
+    /*private void Awake()
     {
 
         //If there is an instance, and it's not me, delete myself.
@@ -21,7 +21,7 @@ public class SceneControl : MonoBehaviour //Script de management des Scène
         {
             instance = this;
         }
-    }
+    }*/
 
     public void LoadMenu()
     {
