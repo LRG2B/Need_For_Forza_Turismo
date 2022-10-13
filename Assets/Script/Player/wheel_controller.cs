@@ -34,6 +34,8 @@ public class wheel_controller : MonoBehaviour
     GameObject RRwheel; //Conducteur arriere
     GameObject SW; //Volant
 
+    public AudioSource horn;
+
     private void Start()
     {
         speed = MinSpeed; //On récupère la bonne vitesse
@@ -49,6 +51,24 @@ public class wheel_controller : MonoBehaviour
         horizontalInput = Input.GetAxis("Horizontal"); //déclaration de l'input horizontal
         forwardInput = Input.GetAxis("Vertical"); // déclaration de l'input vertical
         SW.transform.Rotate(new Vector3(0, 0, 1) * Time.deltaTime * turnSpeed * 10 * -horizontalInput);
+
+        if(horizontalInput == 0)
+        {
+            if (SW.transform.rotation.z >= 0.5)
+            { 
+                SW.transform.Rotate(new Vector3(0, 0, 1) * Time.deltaTime * -turnSpeed * 10);
+            }
+            else if(SW.transform.rotation.z <= 0.5)
+            {
+                SW.transform.Rotate(new Vector3(0, 0, 1) * Time.deltaTime * turnSpeed * 10);
+            }
+        }
+
+        if (Input.GetKeyDown(KeyCode.H))
+        {
+            Instantiate(horn);
+        }
+               
     }
 
     private void FixedUpdate()
@@ -58,6 +78,7 @@ public class wheel_controller : MonoBehaviour
         RLwheel.transform.Rotate(new Vector3(1,0,0) * Time.fixedDeltaTime * speed*10);
         FRwheel.transform.Rotate(new Vector3(1,0,0) * Time.fixedDeltaTime * speed*10);
         RRwheel.transform.Rotate(new Vector3(1,0,0) * Time.fixedDeltaTime * speed*10);
+        
         odometer += transform.position.z/2 - odometer;
         Odo.text = odometer.ToString();
 
@@ -103,8 +124,11 @@ public class wheel_controller : MonoBehaviour
     private void LateUpdate()
     {
         //Si le joueur tombe de la route, il perd
-        if (transform.position.y < -10)
-            SceneManager.LoadScene("Loose"); //Chargement de la scène Loose
+        if ((transform.position.y < -10 || transform.position.y > 5) && SceneManager.GetActiveScene().name == "Infinite")
+            SceneManager.LoadScene("LooseInfinite"); //Chargement de la scène Loose
+
+        else if ((transform.position.y < -10 || transform.position.y > 5) && SceneManager.GetActiveScene().name == "Chrono")
+            SceneManager.LoadScene("LooseChrono"); //Chargement de la scène Loose
 
         //Si le véhicule est en l'air, il ne peut plus avancé
         /*if (transform.position.y > 2 || transform.position.y < -1)

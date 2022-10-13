@@ -6,15 +6,21 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Game.unity
-    guid: 84729eeda748340d0955715b6a50b370
-  - enabled: 1
     path: Assets/Scenes/Menu.unity
     guid: 37193db5e5c644c469ebf4aeea4dda8d
   - enabled: 1
+    path: Assets/Scenes/Infinite.unity
+    guid: 84729eeda748340d0955715b6a50b370
+  - enabled: 1
+    path: Assets/Scenes/LooseInfinite.unity
+    guid: 35d45358b4717fc4fa1e6ba93c92c507
+  - enabled: 1
+    path: Assets/Scenes/Chrono.unity
+    guid: 22640196c743d7a4ab120812b7f1f8fe
+  - enabled: 1
+    path: Assets/Scenes/LooseChrono.unity
+    guid: 0971a152a77960f40a0d1ca7bb8b2647
+  - enabled: 1
     path: Assets/Scenes/Win.unity
     guid: 019c998152d348f47b195047edbeb443
-  - enabled: 1
-    path: Assets/Scenes/Loose.unity
-    guid: 37b28dedd0f0cca41bd011ad6ee3137d
   m_configObjects: {}
