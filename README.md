@@ -2,7 +2,7 @@
 
 _______
 
-Un jeu ou tu conduit une honda Acty en évitant les obstacles et en fesant attention de ne pas tomber de la route
+Un jeu ou tu conduit une honda Acty en évitant les obstacles et en faisant attention de ne pas tomber de la route
 
 Deux mode de jeu sont proposer : 
    - Contre la montre. Aller le plus loin possible avant la fin de la musique. Deux dificultés sont disponible.
