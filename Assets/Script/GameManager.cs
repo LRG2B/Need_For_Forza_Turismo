@@ -28,9 +28,13 @@ public class GameManager : MonoBehaviour
         }
 
     }
-
     private void LateUpdate()
     {
+        if (SceneManager.GetActiveScene().name == "Menu")
+            Destroy(this.gameObject);
+        else
+            DontDestroyOnLoad(this);
+
         if (GameObject.FindGameObjectWithTag("Chrono"))
         {
             timer = GameObject.FindGameObjectWithTag("Chrono").GetComponent<Text>(); ;
