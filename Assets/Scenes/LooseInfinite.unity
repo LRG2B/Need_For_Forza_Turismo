@@ -1073,7 +1073,7 @@ GameObject:
   - component: {fileID: 1453141014}
   m_Layer: 0
   m_Name: Dist
-  m_TagString: MoveCrate
+  m_TagString: Odometer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

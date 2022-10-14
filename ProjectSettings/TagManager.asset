@@ -4,8 +4,8 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - MoveCrate
-  - Pierre
+  - Chrono
+  - Odometer
   layers:
   - Default
   - TransparentFX

@@ -803,7 +803,7 @@ GameObject:
   - component: {fileID: 871784895}
   m_Layer: 0
   m_Name: Chrono
-  m_TagString: Pierre
+  m_TagString: Chrono
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

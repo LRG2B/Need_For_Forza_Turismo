@@ -22,17 +22,17 @@ public class GameManager : MonoBehaviour
 
     private void LateUpdate()
     {
-        if (GameObject.FindGameObjectWithTag("Pierre"))
+        if (GameObject.FindGameObjectWithTag("Chrono"))
         {
-            timer = GameObject.FindGameObjectWithTag("Pierre").GetComponent<Text>(); ;
+            timer = GameObject.FindGameObjectWithTag("Chrono").GetComponent<Text>(); ;
             float minutes = Mathf.FloorToInt(time / 60);
             float seconds = Mathf.FloorToInt(time % 60);
             timer.text = string.Format("{0:00}:{1:00}", minutes, seconds);
         }
 
-        if (GameObject.FindGameObjectWithTag("MoveCrate"))
+        if (GameObject.FindGameObjectWithTag("Odometer"))
         {
-            odo = GameObject.FindGameObjectWithTag("MoveCrate").GetComponent<Text>();
+            odo = GameObject.FindGameObjectWithTag("Odometer").GetComponent<Text>();
             odo.text = km.ToString();
         }
     }
