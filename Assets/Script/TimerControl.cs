@@ -15,9 +15,8 @@ public class TimerControl : MonoBehaviour
     {
         // Starts the timer automatically
         timerIsRunning = true;
-        timeRemaining = 30;
-        //timeRemaining = music.clip.length;
-        //Instantiate(music);
+        timeRemaining = music.clip.length;
+        Instantiate(music);
     }
 
     void Update()
