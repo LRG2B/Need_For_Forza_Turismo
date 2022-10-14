@@ -36,6 +36,8 @@ public class wheel_controller : MonoBehaviour
 
     public AudioSource horn;
 
+    private GameManager gameManager;
+
     private void Start()
     {
         speed = MinSpeed; //On récupère la bonne vitesse
@@ -44,6 +46,7 @@ public class wheel_controller : MonoBehaviour
         FRwheel = GameObject.Find("WHEEL_RF_1");
         RRwheel = GameObject.Find("WHEEL_RR_1");
         SW = GameObject.Find("STEER_HR");
+        gameManager = GameObject.FindObjectOfType<GameManager>();
     }
 
     void Update()
@@ -125,10 +128,17 @@ public class wheel_controller : MonoBehaviour
     {
         //Si le joueur tombe de la route, il perd
         if ((transform.position.y < -10 || transform.position.y > 5) && SceneManager.GetActiveScene().name == "Infinite")
+        {
+            gameManager.km = odometer;
             SceneManager.LoadScene("LooseInfinite"); //Chargement de la scène Loose
+        }
+
 
         else if ((transform.position.y < -10 || transform.position.y > 5) && SceneManager.GetActiveScene().name == "Chrono")
+        {
+            gameManager.km = odometer;
             SceneManager.LoadScene("LooseChrono"); //Chargement de la scène Loose
+        }
 
         //Si le véhicule est en l'air, il ne peut plus avancé
         /*if (transform.position.y > 2 || transform.position.y < -1)

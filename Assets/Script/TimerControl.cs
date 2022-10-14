@@ -11,12 +11,15 @@ public class TimerControl : MonoBehaviour
 
     private float timeRemaining = 0;
     public bool timerIsRunning = false;
+
+    private GameManager gameManager;
     private void Start()
     {
         // Starts the timer automatically
         timerIsRunning = true;
         timeRemaining = music.clip.length;
         Instantiate(music);
+        gameManager = GameObject.FindObjectOfType<GameManager>();
     }
 
     void Update()
@@ -39,6 +42,7 @@ public class TimerControl : MonoBehaviour
                 timerIsRunning = false;
                 SceneManager.LoadScene("Win");
             }
+            gameManager.time = timeRemaining;
         }
     }
 }
