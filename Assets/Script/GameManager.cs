@@ -11,17 +11,13 @@ public class GameManager : MonoBehaviour
     Text timer;
     Text odo;
 
-    private void Awake()
-    {
-        if (SceneManager.GetActiveScene().name != "Menu")
-            DontDestroyOnLoad(this.gameObject);
-        else 
-            Destroy(this.gameObject);
-        
-    }
-
     private void LateUpdate()
     {
+        if (SceneManager.GetActiveScene().name == "Menu")
+            Destroy(this.gameObject);
+        else
+            DontDestroyOnLoad(this);
+
         if (GameObject.FindGameObjectWithTag("Chrono"))
         {
             timer = GameObject.FindGameObjectWithTag("Chrono").GetComponent<Text>(); ;
