@@ -2,50 +2,44 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class TimerControl : MonoBehaviour
 {
     public Text Timer;
+    public AudioSource music;
 
-    public float timeRemaining = 0;
+    private float timeRemaining = 0;
     public bool timerIsRunning = false;
     private void Start()
     {
         // Starts the timer automatically
         timerIsRunning = true;
+        timeRemaining = 30;
+        //timeRemaining = music.clip.length;
+        //Instantiate(music);
     }
 
     void Update()
     {
-       if(Input.GetKeyDown("o"))
-           GameObject.Find("test").SetActive(false);
-
-        if (Input.GetKeyDown("p"))
-
-            GameObject.Find("test").SetActive(true);
-
 
         if (timerIsRunning)
         {
 
-            timeRemaining += Time.deltaTime;
-            //Timer.text = timeRemaining.ToString();
-            float minutes = Mathf.FloorToInt(timeRemaining / 60);
-            float seconds = Mathf.FloorToInt(timeRemaining % 60);
-            Timer.text = string.Format("{0:00}:{1:00}", minutes, seconds);
-
-            /**if (timeRemaining > 0)
+            if (timeRemaining > 0)
             {
-                timeRemaining += Time.deltaTime;
-                Timer.text = timeRemaining.ToString();
+                timeRemaining -= Time.deltaTime;
+                float minutes = Mathf.FloorToInt(timeRemaining / 60);
+                float seconds = Mathf.FloorToInt(timeRemaining % 60);
+                Timer.text = string.Format("{0:00}:{1:00}", minutes, seconds);
             }
 
             else
             {
-                Debug.Log("Time has run out !");
                 timeRemaining = 0;
                 timerIsRunning = false;
-            }*/
+                SceneManager.LoadScene("Win");
+            }
         }
     }
 }
