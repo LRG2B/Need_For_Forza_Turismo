@@ -11,13 +11,22 @@ public class GameManager : MonoBehaviour
     Text timer;
     Text odo;
 
+    public GameManager instance;
+
+
     private void Awake()
     {
-        if (SceneManager.GetActiveScene().name != "Menu")
-            DontDestroyOnLoad(this.gameObject);
-        else 
-            Destroy(this.gameObject);
-        
+
+        if (instance != null && instance != this)
+        {
+            Debug.LogWarning("manager  inventory deja existant ");
+            Destroy(this);
+        }
+        else
+        {
+            instance = this;
+        }
+
     }
 
     private void LateUpdate()

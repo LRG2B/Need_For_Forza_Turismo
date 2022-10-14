@@ -11,7 +11,7 @@ public class wheel_controller : MonoBehaviour
     private float speed; //Vitesse utilisé pour avancer
 
     public float MaxSpeed = 40f;
-    private float MinSpeed = 5f;
+    private float MinSpeed;
     private float acc = 0.4f;
     public AnimationCurve speedAcc;
     private float frein = 0.4f;
@@ -47,6 +47,7 @@ public class wheel_controller : MonoBehaviour
         RRwheel = GameObject.Find("WHEEL_RR_1");
         SW = GameObject.Find("STEER_HR");
         gameManager = GameObject.FindObjectOfType<GameManager>();
+        MinSpeed = dificulty_manager.instance.get_min_speed();
     }
 
     void Update()
@@ -57,13 +58,13 @@ public class wheel_controller : MonoBehaviour
 
         if(horizontalInput == 0)
         {
-            if (SW.transform.rotation.z >= 0.5)
+            if (SW.transform.rotation.z >= 0.1f)
             { 
-                SW.transform.Rotate(new Vector3(0, 0, 1) * Time.deltaTime * -turnSpeed * 10);
+                SW.transform.Rotate(new Vector3(0, 0, 1) * Time.deltaTime * -(turnSpeed + 5) * 10);
             }
-            else if(SW.transform.rotation.z <= 0.5)
+            else if(SW.transform.rotation.z <= -0.1f)
             {
-                SW.transform.Rotate(new Vector3(0, 0, 1) * Time.deltaTime * turnSpeed * 10);
+                SW.transform.Rotate(new Vector3(0, 0, 1) * Time.deltaTime * (turnSpeed + 5) * 10);
             }
         }
 
@@ -85,8 +86,7 @@ public class wheel_controller : MonoBehaviour
         odometer += transform.position.z/2 - odometer;
         Odo.text = odometer.ToString();
 
-        //Si le véhicule route, il peut tourné, sinon, il ne peut pas
-        //Debug.Log(speed);
+        //Si le véhicule roule, il peut tourné, sinon, il ne peut pas
         if (speed > 0)
         {
             transform.Rotate(Vector3.up, turnSpeed * horizontalInput * Time.deltaTime); //on fait tourné le véhicule quand on donne un input horizontal

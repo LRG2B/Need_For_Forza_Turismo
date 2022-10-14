@@ -19,7 +19,7 @@ InputManager:
     snap: 1
     invert: 0
     type: 0
-    axis: 0
+    axis: 9
     joyNum: 0
   - serializedVersion: 3
     m_Name: Vertical
@@ -150,7 +150,7 @@ InputManager:
     axis: 2
     joyNum: 0
   - serializedVersion: 3
-    m_Name: Horizontal
+    m_Name: accelaration
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: 
@@ -163,10 +163,10 @@ InputManager:
     snap: 0
     invert: 0
     type: 2
-    axis: 0
+    axis: 9
     joyNum: 0
   - serializedVersion: 3
-    m_Name: Vertical
+    m_Name: frein
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: 
@@ -179,7 +179,7 @@ InputManager:
     snap: 0
     invert: 1
     type: 2
-    axis: 1
+    axis: 8
     joyNum: 0
   - serializedVersion: 3
     m_Name: Fire1
@@ -293,3 +293,4 @@ InputManager:
     type: 0
     axis: 0
     joyNum: 0
+  m_UsePhysicalKeys: 0

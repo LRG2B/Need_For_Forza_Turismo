@@ -406,6 +406,7 @@ GameObject:
   m_Component:
   - component: {fileID: 868674980}
   - component: {fileID: 868674978}
+  - component: {fileID: 868674981}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -427,6 +428,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   time: 0
   km: 0
+  instance: {fileID: 0}
 --- !u!4 &868674980
 Transform:
   m_ObjectHideFlags: 0
@@ -442,6 +444,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &868674981
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 868674977}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6f3c4c63da151644b88192774942589, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pctg_straight_road_hard: 50
+  pctg_straight_road_easy: 5
+  min_speed_hard: 5
+  min_speed_easy: 0.41
 --- !u!1 &1011153749
 GameObject:
   m_ObjectHideFlags: 0
@@ -658,7 +676,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -1418,7 +1436,9 @@ MonoBehaviour:
   - {fileID: 8750100679551522537, guid: be48053d466f42946b94650cfcb35ab2, type: 3}
   - {fileID: 5249316453647051763, guid: 24f96b6b6a23b1c44bb7d01d85e670e3, type: 3}
   car: {fileID: 7336511369684216098, guid: fa8242a47df9c494194776efcc239363, type: 3}
-  road: {fileID: 9210386102836462465, guid: 4f7d3b79f38f94f4b949964c81d3e4e8, type: 3}
+  road:
+  - {fileID: 9210386102836462465, guid: 4f7d3b79f38f94f4b949964c81d3e4e8, type: 3}
+  - {fileID: 4518862231052409114, guid: 62a66780ef4c7c64aa379620f78afcbc, type: 3}
 --- !u!114 &1998004803
 MonoBehaviour:
   m_ObjectHideFlags: 0
