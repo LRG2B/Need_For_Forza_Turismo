@@ -22,13 +22,13 @@ public class dificulty_manager : MonoBehaviour
     // Tu seras par default en facile
     // si tu veux en dificile il faut juste lancer la fonction Hard_mode() avec cette ligne : dificulty_manager.instance.Hard_mode()
     // si tu veux remettre en facile il faut juste lancer la fonction Easy_mode() avec cette : dificulty_manager.instance.Easy_mode()
-    // Les ligne suivante fonction partout et tout le temps (même en cour de parti si il faut).
+    // Les ligne suivante fonctionne partout et tout le temps (même en cour de parti si il faut).
 
     void Start()
     {
         if (instance != null && instance != this)
         {
-            Debug.LogWarning("manager  inventory deja existant ");
+            Debug.LogWarning("dificulty_manager deja existant ");
             Destroy(this);
         }
         else
