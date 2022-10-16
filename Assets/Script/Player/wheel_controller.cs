@@ -19,6 +19,7 @@ public class wheel_controller : MonoBehaviour
 
     public Text Odo;
     private float odometer = 0;
+    private int bonus = 0;
 
     [SerializeField]
     private float turnSpeed; //Vitesse de la voiture quand elle tourne
@@ -38,8 +39,20 @@ public class wheel_controller : MonoBehaviour
 
     private GameManager gameManager;
 
+    public static wheel_controller instance;
+
     private void Start()
     {
+        if (instance != null && instance != this)
+        {
+            Debug.LogWarning("wheel_controller deja existant ");
+            Destroy(this);
+        }
+        else
+        {
+            instance = this;
+        }
+
         speed = MinSpeed; //On récupère la bonne vitesse
         FLwheel = GameObject.Find("WHEEL_LF_1");
         RLwheel = GameObject.Find("WHEEL_LR_1");
@@ -84,7 +97,7 @@ public class wheel_controller : MonoBehaviour
         RRwheel.transform.Rotate(new Vector3(1,0,0) * Time.fixedDeltaTime * speed*10);
         
         odometer += transform.position.z/2 - odometer;
-        Odo.text = odometer.ToString();
+        Odo.text = (odometer + bonus ).ToString();
 
         //Si le véhicule roule, il peut tourné, sinon, il ne peut pas
         if (speed > 0)
@@ -147,4 +160,10 @@ public class wheel_controller : MonoBehaviour
             speed = SaveSpeed;*/
 
     }
+    public void Add_Km(int value)
+    {
+        bonus += value;
+        Debug.Log("je sais pas pourquoi ça veur pas ça devrai ajouter : " + value);
+    }
+
 }

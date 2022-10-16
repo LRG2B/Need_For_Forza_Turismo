@@ -30,6 +30,7 @@ public class CreateRoad : MonoBehaviour
 
     Quaternion spawnRotation = Quaternion.Euler(0, 90, 0); //Rotation de la route pour qu'elle soit dans le bon sens
     Quaternion obstacleRotation = Quaternion.Euler(0, 180, 0); //Rotation des obstacles pour qu'il soit face au joueur
+    Quaternion obstacleRotation_oil_tank = Quaternion.Euler(0, 90, -90); //Rotation des oil_tank
 
     void Start()
     {
@@ -83,6 +84,10 @@ public class CreateRoad : MonoBehaviour
             if (obstacles[randomObstacle].tag == "MoveCrate")
             {
                 Instantiate(obstacles[randomObstacle], spawnPosition, obstacleRotation); //génartion de la "MoveCrate"
+            }
+            if (obstacles[randomObstacle].tag == "oil_tank")
+            {
+                Instantiate(obstacles[randomObstacle], spawnPosition, obstacleRotation_oil_tank); //génartion de la "MoveCrate"
             }
 
             //Sinon on selectionne une ostion aléatoire sur la route et on génère l'objet
