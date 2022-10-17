@@ -52,7 +52,7 @@ public class CreateRoad : MonoBehaviour
 
         player = GameObject.FindGameObjectWithTag("Player"); //récupartion des informations sur le player
         road_choise = 0;
-        pctg_straith_road = dificulty_manager.instance.get_pctg_straight_road();
+        pctg_straith_road = GameManager.instance.get_pctg_straight_road();
     }
 
     void Update()

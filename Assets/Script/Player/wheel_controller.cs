@@ -40,14 +40,14 @@ public class wheel_controller : MonoBehaviour
 
     private void Start()
     {
-        speed = MinSpeed; //On récupère la bonne vitesse
         FLwheel = GameObject.Find("WHEEL_LF_1");
         RLwheel = GameObject.Find("WHEEL_LR_1");
         FRwheel = GameObject.Find("WHEEL_RF_1");
         RRwheel = GameObject.Find("WHEEL_RR_1");
         SW = GameObject.Find("STEER_HR");
-        gameManager = GameObject.FindObjectOfType<GameManager>();
-        MinSpeed = dificulty_manager.instance.get_min_speed();
+        gameManager = GameManager.instance;
+        MinSpeed = gameManager.get_min_speed();
+        speed = MinSpeed; //On récupère la bonne vitesse
     }
 
     void Update()
@@ -56,7 +56,7 @@ public class wheel_controller : MonoBehaviour
         forwardInput = Input.GetAxis("Vertical"); // déclaration de l'input vertical
         SW.transform.Rotate(new Vector3(0, 0, 1) * Time.deltaTime * turnSpeed * 10 * -horizontalInput);
 
-        if(horizontalInput == 0)
+        /*if(horizontalInput == 0)
         {
             if (SW.transform.rotation.z >= 0.1f)
             { 
@@ -66,7 +66,7 @@ public class wheel_controller : MonoBehaviour
             {
                 SW.transform.Rotate(new Vector3(0, 0, 1) * Time.deltaTime * (turnSpeed + 5) * 10);
             }
-        }
+        }*/
 
         if (Input.GetKeyDown(KeyCode.H))
         {
