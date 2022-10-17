@@ -7,7 +7,7 @@ public class SceneControl : MonoBehaviour //Script de management des Scène
 {
     private void Start()
     {
-        Time.timeScale = 1f;
+        Time.timeScale = 1f; // au start remet par default l'écolement du temps a échelle normale
     }
 
     public void LoadMenu()

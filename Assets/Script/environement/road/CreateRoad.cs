@@ -6,6 +6,11 @@ using UnityEngine;
 
 public class CreateRoad : MonoBehaviour
 {
+    //
+    // Script qui gère la création de la route, des obstacle et des pickable en fonction des valeur donnée par le Game Manager 
+    //
+
+
     public GameObject[] obstacles; //Liste des obstacles
     public GameObject car; //Liste des véhicules disponibles
     public GameObject[] road; //Routes
@@ -23,9 +28,9 @@ public class CreateRoad : MonoBehaviour
     private float larg; //Répresente la largeur de la route
     private float longu; //Réprésente la longeur d'un pavé de route
     private float zt; //Récupère la position du dernier morceau de route
-    private int road_choise;
-    private int compteur;
-    private int pctg_straith_road;
+    private int road_choise; //index de la route choisie
+    private int compteur; // compte le nombre de route instentier
+    private int pctg_straith_road; // pourcentage route étroite
 
 
     Quaternion spawnRotation = Quaternion.Euler(0, 90, 0); //Rotation de la route pour qu'elle soit dans le bon sens
@@ -52,17 +57,18 @@ public class CreateRoad : MonoBehaviour
         //Instantiate(car, transform.position, carRotation); //Génération du véhicule sur la route
 
         player = GameObject.FindGameObjectWithTag("Player"); //récupartion des informations sur le player
-        road_choise = 0;
-        pctg_straith_road = GameManager.instance.get_pctg_straight_road();
+        road_choise = 0; // intialisation par default avec la route large
+        pctg_straith_road = GameManager.instance.get_pctg_straight_road(); //recup de la valeur depuis le Game manager
     }
 
     void Update()
     {
-        //Génération de la route en temps réel, On récupère la position de la voiture, si elle est loin on ne génère pas, sinon on génère un morceau de rote et un obstacles
-        if (compteur > 20 )
+        //Génération de la route en temps réel, On récupère la position de la voiture, si elle est loin on ne génère pas, sinon on génère un morceau de route et un obstacles
+
+        if (compteur > 20 ) //test si on a creer plus de 20 morceau et si c'est le cas on relance le tirage de variant de route
         {
-            compteur = 0;
-            if (Random.Range(0, 100) < pctg_straith_road )
+            compteur = 0; //remise a zeros
+            if (Random.Range(0, 100) < pctg_straith_road ) // tirage au sort et test si on restre dans le pourcentage de route étroite
             {
                 road_choise = 1;
             }
@@ -71,7 +77,7 @@ public class CreateRoad : MonoBehaviour
             larg = (largRoad.x / 2) - 1; // calcule de la largeur depuis le centre
             longu = largRoad.z; //Calcule de la longeur
         }
-        if (player.transform.position.z >= (zt - 25 * longu))
+        if (player.transform.position.z >= (zt - 25 * longu)) // si trop près du bout de la route on en regènere
         {
 
             Vector3 spawnPosition = transform.position + new Vector3(0, 2, zt + longu); //définition de la position de la route
@@ -80,11 +86,7 @@ public class CreateRoad : MonoBehaviour
 
             randomObstacle = Random.Range(deb, obstacles.Length); //sélection aléatoire d'un obstacle dans la liste donnée
 
-            //Si l'obstacle est un caisse qui bouge, elle spawn au centre de la route
-            if (obstacles[randomObstacle].tag == "MoveCrate")
-            {
-                Instantiate(obstacles[randomObstacle], spawnPosition, obstacleRotation); //génartion de la "MoveCrate"
-            }
+            //Si l'obstacle est un jericanne d'essence
             if (obstacles[randomObstacle].tag == "oil_tank")
             {
                 Instantiate(obstacles[randomObstacle], spawnPosition, obstacleRotation_oil_tank); //génartion de la "MoveCrate"
@@ -98,7 +100,7 @@ public class CreateRoad : MonoBehaviour
                 Instantiate(obstacles[randomObstacle], spawnPosition, obstacleRotation); //génération de l'obstacle
             }
             zt += longu; //on passe au pavé suivant
-            compteur++;
+            compteur++; // incrementation
         }
     }
 }
