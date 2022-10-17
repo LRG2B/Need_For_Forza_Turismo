@@ -40,7 +40,6 @@ public class GameManager : MonoBehaviour
         
         if (instance != null && instance != this)
         {
-            Debug.LogWarning("Game Manager deja existant");
             Destroy(this);
         }
         else
@@ -64,7 +63,7 @@ public class GameManager : MonoBehaviour
         if (GameObject.FindGameObjectWithTag("Odometer"))
         {
             odo = GameObject.FindGameObjectWithTag("Odometer").GetComponent<Text>();
-            odo.text = km.ToString();
+            odo.text = km.ToString("F2");
         }
         infinte += 0.01f;
     }

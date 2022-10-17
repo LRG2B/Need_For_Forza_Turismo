@@ -10,6 +10,7 @@ public class TimerControl : MonoBehaviour
     public AudioSource music;
 
     private float timeRemaining = 0;
+    private float time = 0;
     public bool timerIsRunning = false;
 
     private GameManager gameManager;
@@ -31,6 +32,7 @@ public class TimerControl : MonoBehaviour
             if (timeRemaining > 0)
             {
                 timeRemaining -= Time.deltaTime;
+                time += Time.deltaTime;
                 float minutes = Mathf.FloorToInt(timeRemaining / 60);
                 float seconds = Mathf.FloorToInt(timeRemaining % 60);
                 Timer.text = string.Format("{0:00}:{1:00}", minutes, seconds);
@@ -39,10 +41,11 @@ public class TimerControl : MonoBehaviour
             else
             {
                 timeRemaining = 0;
+                time = music.clip.length;
                 timerIsRunning = false;
                 SceneManager.LoadScene("Win");
             }
-            gameManager.time = timeRemaining;
+            gameManager.time = time;
         }
     }
 }

@@ -8,7 +8,7 @@ public class wheel_controller : MonoBehaviour
 {
     //D�finition de la vitesse
 
-    private float speed; //Vitesse utilis� pour avancer
+    private float speed; //Vitesse utilise pour avancer
 
     public float MaxSpeed = 40f;
     private float MinSpeed;
@@ -45,7 +45,6 @@ public class wheel_controller : MonoBehaviour
     {
         if (instance != null && instance != this)
         {
-            Debug.LogWarning("wheel_controller deja existant ");
             Destroy(this);
         }
         else
@@ -70,17 +69,6 @@ public class wheel_controller : MonoBehaviour
         forwardInput = Input.GetAxis("Vertical"); // d�claration de l'input vertical
         SW.transform.Rotate(new Vector3(0, 0, 1) * Time.deltaTime * turnSpeed * 10 * -horizontalInput);
 
-        /*if(horizontalInput == 0)
-        {
-            if (SW.transform.rotation.z >= 0.1f)
-            { 
-                SW.transform.Rotate(new Vector3(0, 0, 1) * Time.deltaTime * -(turnSpeed + 5) * 10);
-            }
-            else if(SW.transform.rotation.z <= -0.1f)
-            {
-                SW.transform.Rotate(new Vector3(0, 0, 1) * Time.deltaTime * (turnSpeed + 5) * 10);
-            }
-        }*/
 
         if (Input.GetKeyDown(KeyCode.H))
         {
@@ -98,7 +86,7 @@ public class wheel_controller : MonoBehaviour
         RRwheel.transform.Rotate(new Vector3(1,0,0) * Time.fixedDeltaTime * speed*10);
         
         odometer += transform.position.z/2 - odometer;
-        Odo.text = (odometer + bonus ).ToString();
+        Odo.text = (odometer + bonus ).ToString("F2");
 
         //Si le v�hicule roule, il peut tourn�, sinon, il ne peut pas
         if (speed > 0)
@@ -154,17 +142,11 @@ public class wheel_controller : MonoBehaviour
             SceneManager.LoadScene("LooseChrono"); //Chargement de la sc�ne Loose
         }
 
-        //Si le v�hicule est en l'air, il ne peut plus avanc�
-        /*if (transform.position.y > 2 || transform.position.y < -1)
-            speed = 0;
-        else
-            speed = SaveSpeed;*/
 
     }
     public void Add_Km(int value)
     {
         bonus += value;
-        Debug.Log("je sais pas pourquoi �a veur pas �a devrai ajouter : " + value);
     }
 
 }
