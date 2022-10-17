@@ -68,8 +68,6 @@ public class wheel_controller : MonoBehaviour
 
     void Update()
     {
-        MinSpeed = gameManager.get_max_speed();
-
         horizontalInput = Input.GetAxis("Horizontal"); //d�claration de l'input horizontal
         forwardInput = Input.GetAxis("Vertical"); // d�claration de l'input vertical
         SW.transform.Rotate(new Vector3(0, 0, 1) * Time.deltaTime * turnSpeed * 10 * -horizontalInput);
@@ -141,7 +139,7 @@ public class wheel_controller : MonoBehaviour
             }
         }
         if (is_infinite)
-            MaxSpeed += 0.5f;
+            MaxSpeed += 0.01f;
     }
 
     private void LateUpdate()

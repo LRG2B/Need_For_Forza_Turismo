@@ -8,21 +8,16 @@ public class GameManager : MonoBehaviour
 {
     public int pctg_straight_road_hard = 50;
     public int pctg_straight_road_easy = 5;
-    public float min_speed_hard = 5;
-    public float min_speed_easy = 0.4f;
-    public float max_speed_hard = 40f;
-    public float max_speed_easy = 40f;
+    public float min_speed = 0.4f;
 
 
     int current_pctg_straight_road;
     float current_min_speed;
-    float current_max_speed;
 
     public float time = 0;
     public float km = 0;
     Text timer;
     Text odo;
-    float infinte;
 
     public static GameManager instance;
 
@@ -34,7 +29,6 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        infinte = 0;
         DontDestroyOnLoad(instance);
     }
 
@@ -68,38 +62,29 @@ public class GameManager : MonoBehaviour
             odo = GameObject.FindGameObjectWithTag("Odometer").GetComponent<Text>();
             odo.text = km.ToString("F2");
         }
-        infinte += 0.01f;
     }
 
     public void Hard_mode()
     {
         current_pctg_straight_road = pctg_straight_road_hard;
-        current_min_speed = min_speed_hard;
-        current_max_speed = max_speed_hard;
+        current_min_speed = min_speed;
     }
 
     public void Easy_mode()
     {
         current_pctg_straight_road = pctg_straight_road_easy;
-        current_min_speed = min_speed_easy;
-        current_max_speed = max_speed_easy;
+        current_min_speed = min_speed;
     }
 
     public void Infinite_mode() // fait comme le easy juste avec un autre nom pour plus de logique dans le reste du code
     {
         current_pctg_straight_road = pctg_straight_road_easy;
-        current_min_speed = min_speed_easy + infinte;
-        current_max_speed = max_speed_easy + infinte;
+        current_min_speed = min_speed;
     }
 
     public float get_min_speed()
     {
         return current_min_speed;
-    }
-    
-    public float get_max_speed()
-    {
-        return current_max_speed;
     }
 
     public int get_pctg_straight_road()
