@@ -19,6 +19,7 @@ public class GameManager : MonoBehaviour
     public float km = 0;
     Text timer;
     Text odo;
+    float infinte;
 
     public static GameManager instance;
 
@@ -28,10 +29,15 @@ public class GameManager : MonoBehaviour
     // si tu veux remettre en facile il faut juste lancer la fonction Easy_mode() avec cette : dificulty_manager.instance.Easy_mode()
     // Les ligne suivante fonctionne partout et tout le temps (même en cour de parti si il faut).
 
+    private void Start()
+    {
+        infinte = 0;
+        DontDestroyOnLoad(instance);
+    }
 
     private void Awake()
     {
-
+        
         if (instance != null && instance != this)
         {
             Debug.LogWarning("Game Manager deja existant");
@@ -43,12 +49,9 @@ public class GameManager : MonoBehaviour
         }
 
     }
+
     private void LateUpdate()
     {
-        if (SceneManager.GetActiveScene().name == "Menu")
-            Destroy(this.gameObject);
-        else
-            DontDestroyOnLoad(this);
 
         if (GameObject.FindGameObjectWithTag("Chrono"))
         {
@@ -63,6 +66,7 @@ public class GameManager : MonoBehaviour
             odo = GameObject.FindGameObjectWithTag("Odometer").GetComponent<Text>();
             odo.text = km.ToString();
         }
+        infinte += 0.01f;
     }
 
     public void Hard_mode()
@@ -79,7 +83,8 @@ public class GameManager : MonoBehaviour
 
     public void Infinite_mode() // fait comme le easy juste avec un autre nom pour plus de logique dans le reste du code
     {
-        Easy_mode();
+        current_pctg_straight_road = pctg_straight_road_easy;
+        current_min_speed = min_speed_easy + infinte;
     }
 
     public float get_min_speed()

@@ -143,7 +143,7 @@ public class wheel_controller : MonoBehaviour
         //Si le joueur tombe de la route, il perd
         if ((transform.position.y < -10 || transform.position.y > 5) && SceneManager.GetActiveScene().name == "Infinite")
         {
-            gameManager.km = odometer;
+            gameManager.km = odometer+bonus;
             SceneManager.LoadScene("LooseInfinite"); //Chargement de la sc�ne Loose
         }
 
