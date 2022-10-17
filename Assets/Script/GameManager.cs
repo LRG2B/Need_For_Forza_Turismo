@@ -10,10 +10,13 @@ public class GameManager : MonoBehaviour
     public int pctg_straight_road_easy = 5;
     public float min_speed_hard = 5;
     public float min_speed_easy = 0.4f;
+    public float max_speed_hard = 40f;
+    public float max_speed_easy = 40f;
 
 
     int current_pctg_straight_road;
     float current_min_speed;
+    float current_max_speed;
 
     public float time = 0;
     public float km = 0;
@@ -72,23 +75,31 @@ public class GameManager : MonoBehaviour
     {
         current_pctg_straight_road = pctg_straight_road_hard;
         current_min_speed = min_speed_hard;
+        current_max_speed = max_speed_hard;
     }
 
     public void Easy_mode()
     {
         current_pctg_straight_road = pctg_straight_road_easy;
         current_min_speed = min_speed_easy;
+        current_max_speed = max_speed_easy;
     }
 
     public void Infinite_mode() // fait comme le easy juste avec un autre nom pour plus de logique dans le reste du code
     {
         current_pctg_straight_road = pctg_straight_road_easy;
         current_min_speed = min_speed_easy + infinte;
+        current_max_speed = max_speed_easy + infinte;
     }
 
     public float get_min_speed()
     {
         return current_min_speed;
+    }
+    
+    public float get_max_speed()
+    {
+        return current_max_speed;
     }
 
     public int get_pctg_straight_road()

@@ -10,7 +10,7 @@ public class wheel_controller : MonoBehaviour
 
     private float speed; //Vitesse utilise pour avancer
 
-    public float MaxSpeed = 40f;
+    public float MaxSpeed;
     private float MinSpeed;
     private float acc = 0.4f;
     public AnimationCurve speedAcc;
@@ -65,9 +65,22 @@ public class wheel_controller : MonoBehaviour
 
     void Update()
     {
+        MinSpeed = gameManager.get_max_speed();
+
         horizontalInput = Input.GetAxis("Horizontal"); //d�claration de l'input horizontal
         forwardInput = Input.GetAxis("Vertical"); // d�claration de l'input vertical
         SW.transform.Rotate(new Vector3(0, 0, 1) * Time.deltaTime * turnSpeed * 10 * -horizontalInput);
+        if (horizontalInput == 0)
+        {
+            if (SW.transform.rotation.z >= 0.1f)
+            {
+                SW.transform.Rotate(new Vector3(0, 0, 1) * Time.deltaTime * -(turnSpeed + 5) * 10);
+            }
+            else if (SW.transform.rotation.z <= -0.1f)
+            {
+                SW.transform.Rotate(new Vector3(0, 0, 1) * Time.deltaTime * (turnSpeed + 5) * 10);
+            }
+        }
 
 
         if (Input.GetKeyDown(KeyCode.H))
