@@ -6,9 +6,9 @@ using UnityEngine.UI;
 
 public class wheel_controller : MonoBehaviour
 {
-    //Définition de la vitesse
+    //Dï¿½finition de la vitesse
 
-    private float speed; //Vitesse utilisé pour avancer
+    private float speed; //Vitesse utilisï¿½ pour avancer
 
     public float MaxSpeed = 40f;
     private float MinSpeed;
@@ -19,15 +19,16 @@ public class wheel_controller : MonoBehaviour
 
     public Text Odo;
     private float odometer = 0;
+    private int bonus = 0;
 
     [SerializeField]
     private float turnSpeed; //Vitesse de la voiture quand elle tourne
 
-    //Déclaration des input du clavier
+    //Dï¿½claration des input du clavier
     private float horizontalInput;
     private float forwardInput;
 
-    //Déclaration des roues
+    //Dï¿½claration des roues
     GameObject FLwheel; //Passager avant
     GameObject RLwheel; //Passager arriere
     GameObject FRwheel; //Conducteur Avant
@@ -38,8 +39,21 @@ public class wheel_controller : MonoBehaviour
 
     private GameManager gameManager;
 
+    public static wheel_controller instance;
+
     private void Start()
     {
+        if (instance != null && instance != this)
+        {
+            Debug.LogWarning("wheel_controller deja existant ");
+            Destroy(this);
+        }
+        else
+        {
+            instance = this;
+        }
+
+        speed = MinSpeed; //On rï¿½cupï¿½re la bonne vitesse
         FLwheel = GameObject.Find("WHEEL_LF_1");
         RLwheel = GameObject.Find("WHEEL_LR_1");
         FRwheel = GameObject.Find("WHEEL_RF_1");
@@ -47,13 +61,13 @@ public class wheel_controller : MonoBehaviour
         SW = GameObject.Find("STEER_HR");
         gameManager = GameManager.instance;
         MinSpeed = gameManager.get_min_speed();
-        speed = MinSpeed; //On récupère la bonne vitesse
+        speed = MinSpeed; //On rï¿½cupï¿½re la bonne vitesse
     }
 
     void Update()
     {
-        horizontalInput = Input.GetAxis("Horizontal"); //déclaration de l'input horizontal
-        forwardInput = Input.GetAxis("Vertical"); // déclaration de l'input vertical
+        horizontalInput = Input.GetAxis("Horizontal"); //dï¿½claration de l'input horizontal
+        forwardInput = Input.GetAxis("Vertical"); // dï¿½claration de l'input vertical
         SW.transform.Rotate(new Vector3(0, 0, 1) * Time.deltaTime * turnSpeed * 10 * -horizontalInput);
 
         /*if(horizontalInput == 0)
@@ -77,19 +91,19 @@ public class wheel_controller : MonoBehaviour
 
     private void FixedUpdate()
     {
-        transform.Translate(Vector3.forward * Time.fixedDeltaTime * speed); //Déplacement du véhicule en fonction du temps. Note: le véhicule avance tout le temps, il ne peut pas reculer
+        transform.Translate(Vector3.forward * Time.fixedDeltaTime * speed); //Dï¿½placement du vï¿½hicule en fonction du temps. Note: le vï¿½hicule avance tout le temps, il ne peut pas reculer
         FLwheel.transform.Rotate(new Vector3(1,0,0) * Time.fixedDeltaTime * speed*10);
         RLwheel.transform.Rotate(new Vector3(1,0,0) * Time.fixedDeltaTime * speed*10);
         FRwheel.transform.Rotate(new Vector3(1,0,0) * Time.fixedDeltaTime * speed*10);
         RRwheel.transform.Rotate(new Vector3(1,0,0) * Time.fixedDeltaTime * speed*10);
         
         odometer += transform.position.z/2 - odometer;
-        Odo.text = odometer.ToString();
+        Odo.text = (odometer + bonus ).ToString();
 
-        //Si le véhicule roule, il peut tourné, sinon, il ne peut pas
+        //Si le vï¿½hicule roule, il peut tournï¿½, sinon, il ne peut pas
         if (speed > 0)
         {
-            transform.Rotate(Vector3.up, turnSpeed * horizontalInput * Time.deltaTime); //on fait tourné le véhicule quand on donne un input horizontal
+            transform.Rotate(Vector3.up, turnSpeed * horizontalInput * Time.deltaTime); //on fait tournï¿½ le vï¿½hicule quand on donne un input horizontal
         }
 
 
@@ -130,21 +144,27 @@ public class wheel_controller : MonoBehaviour
         if ((transform.position.y < -10 || transform.position.y > 5) && SceneManager.GetActiveScene().name == "Infinite")
         {
             gameManager.km = odometer;
-            SceneManager.LoadScene("LooseInfinite"); //Chargement de la scène Loose
+            SceneManager.LoadScene("LooseInfinite"); //Chargement de la scï¿½ne Loose
         }
 
 
         else if ((transform.position.y < -10 || transform.position.y > 5) && SceneManager.GetActiveScene().name == "Chrono")
         {
             gameManager.km = odometer;
-            SceneManager.LoadScene("LooseChrono"); //Chargement de la scène Loose
+            SceneManager.LoadScene("LooseChrono"); //Chargement de la scï¿½ne Loose
         }
 
-        //Si le véhicule est en l'air, il ne peut plus avancé
+        //Si le vï¿½hicule est en l'air, il ne peut plus avancï¿½
         /*if (transform.position.y > 2 || transform.position.y < -1)
             speed = 0;
         else
             speed = SaveSpeed;*/
 
     }
+    public void Add_Km(int value)
+    {
+        bonus += value;
+        Debug.Log("je sais pas pourquoi ï¿½a veur pas ï¿½a devrai ajouter : " + value);
+    }
+
 }

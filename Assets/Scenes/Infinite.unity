@@ -1204,6 +1204,25 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7970059163413001112, guid: fa8242a47df9c494194776efcc239363, type: 3}
   m_PrefabInstance: {fileID: 1211394945}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1590928380 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7336511369684216098, guid: fa8242a47df9c494194776efcc239363, type: 3}
+  m_PrefabInstance: {fileID: 1211394945}
+  m_PrefabAsset: {fileID: 0}
+--- !u!136 &1590928385
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1590928380}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.9611598
+  m_Height: 3.2146716
+  m_Direction: 1
+  m_Center: {x: -0.02414465, y: 0.98244596, z: 1.4401096}
 --- !u!1 &1677875105
 GameObject:
   m_ObjectHideFlags: 0
@@ -1435,6 +1454,7 @@ MonoBehaviour:
   - {fileID: 1057734852650593544, guid: 8a2997f1a1882ad48b9ae44cffc2bfb4, type: 3}
   - {fileID: 8750100679551522537, guid: be48053d466f42946b94650cfcb35ab2, type: 3}
   - {fileID: 5249316453647051763, guid: 24f96b6b6a23b1c44bb7d01d85e670e3, type: 3}
+  - {fileID: 4414083607138609468, guid: abdcca907b5f15942885a9ff3e787246, type: 3}
   car: {fileID: 7336511369684216098, guid: fa8242a47df9c494194776efcc239363, type: 3}
   road:
   - {fileID: 9210386102836462465, guid: 4f7d3b79f38f94f4b949964c81d3e4e8, type: 3}
