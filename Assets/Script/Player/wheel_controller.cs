@@ -20,6 +20,7 @@ public class wheel_controller : MonoBehaviour
     public Text Odo;
     private float odometer = 0;
     private int bonus = 0;
+    bool is_infinite;
 
     [SerializeField]
     private float turnSpeed; //Vitesse de la voiture quand elle tourne
@@ -61,6 +62,8 @@ public class wheel_controller : MonoBehaviour
         gameManager = GameManager.instance;
         MinSpeed = gameManager.get_min_speed();
         speed = MinSpeed; //On r�cup�re la bonne vitesse
+        if (SceneManager.GetActiveScene().name == "Infinite")
+            is_infinite = true;
     }
 
     void Update()
@@ -137,6 +140,8 @@ public class wheel_controller : MonoBehaviour
                 speed = MinSpeed;
             }
         }
+        if (is_infinite)
+            MaxSpeed += 0.5f;
     }
 
     private void LateUpdate()
