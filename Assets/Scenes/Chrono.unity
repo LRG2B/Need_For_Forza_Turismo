@@ -1357,6 +1357,7 @@ GameObject:
   - component: {fileID: 1011153750}
   - component: {fileID: 1011153754}
   - component: {fileID: 1011153755}
+  - component: {fileID: 1011153756}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -1476,6 +1477,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd813138ce23a0c4d837bd3f3f2abca2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1011153756
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1011153749}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e33493177b01314a918addaf9a24d15, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 1367620221}
 --- !u!1 &1033986794
 GameObject:
   m_ObjectHideFlags: 0
@@ -2627,7 +2641,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1347780312}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1011153756}
+        m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
+        m_MethodName: Resume
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1347780312
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2761,6 +2787,7 @@ GameObject:
   - component: {fileID: 1367620218}
   - component: {fileID: 1367620220}
   - component: {fileID: 1367620219}
+  - component: {fileID: 1367620221}
   m_Layer: 5
   m_Name: menu
   m_TagString: Untagged
@@ -2828,6 +2855,26 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1367620217}
   m_CullTransparentMesh: 1
+--- !u!95 &1367620221
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1367620217}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 5d33e48cdea2d6641bc611830a9eeeaf, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1447890367
 GameObject:
   m_ObjectHideFlags: 0
@@ -3010,7 +3057,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Quit
+  m_Text: Menu
 --- !u!222 &1475021259
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3509,7 +3556,7 @@ GameObject:
   - component: {fileID: 1704968795}
   - component: {fileID: 1704968794}
   m_Layer: 5
-  m_Name: Quit
+  m_Name: Menu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3579,7 +3626,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1704968795}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1011153755}
+        m_TargetAssemblyTypeName: SceneControl, Assembly-CSharp
+        m_MethodName: LoadMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1704968795
 MonoBehaviour:
   m_ObjectHideFlags: 0

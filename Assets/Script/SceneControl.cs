@@ -33,9 +33,4 @@ public class SceneControl : MonoBehaviour //Script de management des Scène
         Application.Quit(); //on quitte le logiciel
     }
 
-    private void LateUpdate()
-    {
-        if (Input.GetKeyDown(KeyCode.Escape))
-            LoadMenu();
-    }
 }

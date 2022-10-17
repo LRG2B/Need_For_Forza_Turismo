@@ -6,9 +6,15 @@ using UnityEngine.SceneManagement;
 public class PauseMenu : MonoBehaviour
 {
     public static bool Paused = false;
+    AudioSource music;
 
     //public GameObject pauseMenuUI;
     public Animator animator;
+
+    private void Start()
+    {
+        music = GameObject.FindObjectOfType<AudioSource>();
+    }
 
     void Update()
     {
@@ -31,6 +37,7 @@ public class PauseMenu : MonoBehaviour
         //pauseMenuUI.SetActive(false);
         Time.timeScale = 1f;
         Paused = false;
+        music.Play();
     }
 
     void Pause()
@@ -39,5 +46,6 @@ public class PauseMenu : MonoBehaviour
         //pauseMenuUI.SetActive(true);
         Time.timeScale = 0f;
         Paused = true;
+        music.Pause();
     }
 }
