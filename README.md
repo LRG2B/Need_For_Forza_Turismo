@@ -2,11 +2,14 @@
 
 _______
 
-Un jeu où tu conduit une honda Acty en évitant les obstacles et en faisant attention de ne pas tomber de la route
-Deux modes de jeu sont proposés : 
-   - Contre-la-montre : Aller le plus loin possible avant la fin de la musique. Deux modes de dificultés sont disponibles.
-   - Infinite : Aller le plus loin avec une voiture qui vas de plus en plus vite en faisant attention de ne pas tomber
-   
+C'est un jeu où on conduit un Honda Acty en évitant les obstacles et en faisant attention de ne pas tomber de la route !
+
+Deux modes de jeu sont proposés :
+
+Contre la montre :  Allez le plus loin possible avant la fin de la musique. Deux difficultés sont disponibles.
+Infinite :  Allez le plus loin possible avec une voiture qui va de plus en plus vite,  en faisant attention de ne pas tomber.
+
+Amusez vous bien !
 _________
 
 
